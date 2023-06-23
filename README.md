@@ -1,5 +1,5 @@
 # Description
-Library that allows you to print some info on a 16x2 LCD display equipped with PCF8574 I2C I/O expander.  
+Library that allows you to print some info on a 16x2 LCD equipped with PCF8574 I2C I/O expander.  
 At the current moment it support only HAL driver to deal with I2C interface.
 
 # Example conditions
