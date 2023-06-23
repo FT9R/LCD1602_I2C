@@ -1,0 +1,5 @@
+{
+    "ewp": "${workspaceFolder}\\EWARM\\LCD1602_I2C.ewp",
+    "configuration": "LCD1602_I2C",
+    "toolchain": "C:\\\\Program Files (x86)\\\\IAR Systems\\\\Embedded Workbench 9.0"
+}

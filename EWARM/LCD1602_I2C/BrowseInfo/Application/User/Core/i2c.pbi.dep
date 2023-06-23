@@ -1,0 +1,40 @@
+E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\BrowseInfo\Application\User\Core\i2c.pbi: \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\Core\Src\i2c.c \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Core\Inc\i2c.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Core\Inc\main.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Core\Inc\stm32f4xx_hal_conf.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_def.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f4xx.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\stm32f407xx.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Include\core_cm4.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stdint.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ycheck.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\yvals.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Defaults.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Config_Full.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\DLib_Product.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Include\cmsis_version.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Include\cmsis_compiler.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Include\cmsis_iccarm.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\aarch32\iccarm_builtin.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Include\mpu_armv7.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\CMSIS\Device\ST\STM32F4xx\Include\system_stm32f4xx.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\Legacy\stm32_hal_legacy.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\stddef.h \
+  C:\Program\ Files\ (x86)\IAR\ Systems\Embedded\ Workbench\ 9.0\arm\inc\c\ysizet.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_rcc_ex.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_gpio_ex.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_exti.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_dma_ex.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_cortex.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ex.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_flash_ramfunc.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_i2c_ex.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr.h \
+  E:\IAR\ projects\STM32F4xx\LCD1602_I2C\EWARM\..\Drivers\STM32F4xx_HAL_Driver\Inc\stm32f4xx_hal_pwr_ex.h
