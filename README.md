@@ -7,15 +7,15 @@ At the current moment it support only HAL driver to deal with I2C interface
 `Target MCU - STM32F407VGT6 (STM32F4XX_M devBoard)`  
 
 # Quick start
-1)Provide library include:
+1) Provide library include:
 ```C
 #include "lcd1602_i2c.h"
 ```
-2)Declare the handle
+2) Declare the handle
 ```C
 lcd1602_HandleTypeDef lcd1602_Handle;
 ```
-3)Put initialization function before the main loop
+3) Put initialization function before the main loop
 ```C
 	lcd1602_Init(&lcd1602_Handle, &hi2c1, PCF8574A_ADDRESS);
  while (1)
@@ -23,5 +23,5 @@ lcd1602_HandleTypeDef lcd1602_Handle;
  ...
   }
 ```
-4)That's all. Ready to use  
+4) That's all. Ready to use  
 For application use refer to `main.c`
