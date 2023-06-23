@@ -1,6 +1,6 @@
 # Description
 Library that allows you to print some info on a 16x2 LCD display equipped with PCF8574 I2C I/O expander.  
-At the current moment it support only HAL driver to deal with I2C interface
+At the current moment it support only HAL driver to deal with I2C interface.
 
 # Example conditions
 `Toolchain - IAR EWARM v9.20.1`  
@@ -26,5 +26,4 @@ while (1)
  ...
 }
 ```
-4) That's all. Ready to use  
-For application use refer to `main.c`
+4) That's all. Ready to use. For application use refer to `main.c`.
