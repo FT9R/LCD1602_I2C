@@ -11,12 +11,12 @@ At the current moment it support only HAL driver to deal with I2C interface
 ```C
 #include "lcd1602_i2c.h"
 ```
-2) Declare the handle
+2) Declare the handle:
 ```C
 lcd1602_HandleTypeDef lcd1602_Handle;
 ```
-3) Put initialization function after HAL I2C init function   
-but before the main loop
+3) Put initialization function after HAL I2C init function    
+but before the main loop:
 ```C
 MX_I2C1_Init();
 ...
