@@ -17,11 +17,11 @@ lcd1602_HandleTypeDef lcd1602_Handle;
 ```
 3) Put initialization function before the main loop
 ```C
-	lcd1602_Init(&lcd1602_Handle, &hi2c1, PCF8574A_ADDRESS);
- while (1)
-	{
+lcd1602_Init(&lcd1602_Handle, &hi2c1, PCF8574A_ADDRESS);
+while (1)
+{
  ...
-  }
+}
 ```
 4) That's all. Ready to use  
 For application use refer to `main.c`
