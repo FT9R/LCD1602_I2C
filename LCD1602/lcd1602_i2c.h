@@ -34,7 +34,7 @@ typedef enum
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	hi2c: pointer to HAL I2C descriptor
  * @param	address: PCF8574 I/O expander I2C address
- * @retval none
+ * @retval	none
  */
 void lcd1602_Init(lcd1602_HandleTypeDef *lcd1602_Handle, I2C_HandleTypeDef *hi2c, uint8_t address);
 
@@ -42,7 +42,7 @@ void lcd1602_Init(lcd1602_HandleTypeDef *lcd1602_Handle, I2C_HandleTypeDef *hi2c
  * @brief	Prints string on the display
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	pString: pointer to the null-terminated char sequence
- * @retval none
+ * @retval	none
  */
 void lcd1602_Print(lcd1602_HandleTypeDef *lcd1602_Handle, uint8_t *pString);
 
@@ -51,21 +51,21 @@ void lcd1602_Print(lcd1602_HandleTypeDef *lcd1602_Handle, uint8_t *pString);
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	col: column number started from 0
  * @param	row: row number started from 0
- * @retval none
+ * @retval	none
  */
 void lcd1602_SetCursor(lcd1602_HandleTypeDef *lcd1602_Handle, uint8_t col, uint8_t row);
 
 /**
  * @brief	Clears entire display and sets DDRAM address 0 in address counter
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
- * @retval none
+ * @retval	none
  */
 void lcd1602_Clear(lcd1602_HandleTypeDef *lcd1602_Handle);
 
 /**
  * @brief	Sets DDRAM address 0 in address counter
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
- * @retval none
+ * @retval	none
  */
 void lcd1602_Home(lcd1602_HandleTypeDef *lcd1602_Handle);
 
@@ -73,7 +73,7 @@ void lcd1602_Home(lcd1602_HandleTypeDef *lcd1602_Handle);
  * @brief	Display on/off control
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	state: new state
- * @retval none
+ * @retval	none
  */
 void lcd1602_Display(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state);
 
@@ -81,7 +81,7 @@ void lcd1602_Display(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState stat
  * @brief	Cursor on/off control
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	state: new state
- * @retval none
+ * @retval	none
  */
 void lcd1602_Cursor(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state);
 
@@ -89,7 +89,7 @@ void lcd1602_Cursor(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state
  * @brief	Blink on/off control
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	state: new state
- * @retval none
+ * @retval	none
  */
 void lcd1602_Blink(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state);
 
@@ -97,7 +97,7 @@ void lcd1602_Blink(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state)
  * @brief	LED backlight on/off control
  * @param	lcd1602_Handle: pointer to the user-declared lcd1602 descriptor
  * @param	state: new state
- * @retval none
+ * @retval	none
  */
 void lcd1602_LED(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state);
 
@@ -107,7 +107,7 @@ void lcd1602_LED(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state);
  * @param	direction: shift direction
  * ------	@arg ShiftLeft
  * ------	@arg ShiftRight
- * @retval none
+ * @retval	none
  */
 void lcd1602_DisplayShift(lcd1602_HandleTypeDef *lcd1602_Handle, ShiftDirection direction);
 
@@ -117,7 +117,7 @@ void lcd1602_DisplayShift(lcd1602_HandleTypeDef *lcd1602_Handle, ShiftDirection 
  * @param	direction: shift direction
  * ------	@arg ShiftLeft
  * ------	@arg ShiftRight
- * @retval none
+ * @retval	none
  */
 void lcd1602_CursorShift(lcd1602_HandleTypeDef *lcd1602_Handle, ShiftDirection direction);
 #endif
