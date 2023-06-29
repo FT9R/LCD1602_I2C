@@ -8,26 +8,39 @@
 #define PCF8574_ADDRESS 0b01001110
 #define PCF8574A_ADDRESS 0b01111110
 
+/* User-defined constants */
+#define I2C_TIMEOUT 1000
+
 typedef struct
 {
-	I2C_HandleTypeDef *hi2c;
-	uint8_t address;
-	uint8_t instruction;
-	uint8_t data;
 	FlagStatus RS_Pin;
 	FlagStatus RW_Pin;
 	FlagStatus E_Pin;
 	FunctionalState LED;
+} ctrlPins_TypeDef;
+
+typedef struct
+{
 	FunctionalState displayState;
 	FunctionalState cursorState;
 	FunctionalState blinkState;
-} lcd1602_HandleTypeDef;
+} dispBits_TypeDef;
 
 typedef enum
 {
 	ShiftRight,
 	ShiftLeft
 } ShiftDirection;
+
+typedef struct
+{
+	I2C_HandleTypeDef *hi2c;
+	uint8_t address;
+	uint8_t instruction;
+	uint8_t data;
+	ctrlPins_TypeDef ctrlPins;
+	dispBits_TypeDef dispBits;
+} lcd1602_HandleTypeDef;
 
 /**
  * @brief	Binds lcd1602 handle to the target device and initializes it

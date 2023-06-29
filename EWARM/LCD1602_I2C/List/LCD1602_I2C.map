@@ -1,73 +1,73 @@
 ###############################################################################
 #
-# IAR ELF Linker V9.20.1.318/W64 for ARM                  23/Jun/2023  16:23:00
+# IAR ELF Linker V9.20.1.318/W64 for ARM                  29/Jun/2023  09:46:09
 # Copyright 2007-2021 IAR Systems AB.
 #
 #    Output file  =
-#        e:\IAR
+#        E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Exe\LCD1602_I2C.out
 #    Map file     =
-#        e:\IAR
+#        E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\List\LCD1602_I2C.map
 #    Command line =
-#        -f "e:\IAR
+#        -f "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Exe\LCD1602_I2C.out.rsp"
-#        ("e:\IAR
+#        ("E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core\gpio.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core\i2c.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\LCD1602\lcd1602_i2c.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core\main.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\EWARM\startup_stm32f407xx.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_cortex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_dma.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_dma_ex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_exti.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_flash.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_flash_ex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_flash_ramfunc.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_gpio.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_i2c.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_i2c_ex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core\stm32f4xx_hal_msp.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_pwr.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_pwr_ex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_rcc.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_rcc_ex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_tim.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver\stm32f4xx_hal_tim_ex.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core\stm32f4xx_it.o"
-#        "e:\IAR
+#        "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\CMSIS\system_stm32f4xx.o"
-#        --no_out_extension -o "e:\IAR
+#        --no_out_extension -o "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Exe\LCD1602_I2C.out"
 #        --redirect _Printf=_PrintfFullNoMb --redirect _Scanf=_ScanfFullNoMb
-#        --map "e:\IAR
+#        --map "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\List\LCD1602_I2C.map"
-#        --config "e:\IAR
+#        --config "E:\IAR
 #        projects\STM32F4xx\LCD1602_I2C\EWARM/stm32f407xx_flash.icf"
 #        --semihosting --entry __iar_program_start --vfe --text_out locale)
 #
@@ -294,12 +294,12 @@ command line/config:
     -------------------------------------------------
     Total:
 
-e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\EWARM: [1]
+E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\EWARM: [1]
     startup_stm32f407xx.o       732
     -------------------------------------------------
     Total:                      732
 
-e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core: [2]
+E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core: [2]
     gpio.o                       80
     i2c.o                       184                84
     main.o                      352       64       16
@@ -308,12 +308,12 @@ e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Cor
     -------------------------------------------------
     Total:                      704       64      100
 
-e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\CMSIS: [3]
+E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\CMSIS: [3]
     system_stm32f4xx.o           16       28        4
     -------------------------------------------------
     Total:                       16       28        4
 
-e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver: [4]
+E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver: [4]
     stm32f4xx_hal.o             204        5        9
     stm32f4xx_hal_cortex.o      256
     stm32f4xx_hal_gpio.o        528
@@ -322,7 +322,7 @@ e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HA
     -------------------------------------------------
     Total:                    4'066        5        9
 
-e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\LCD1602: [5]
+E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\LCD1602: [5]
     lcd1602_i2c.o               894
     -------------------------------------------------
     Total:                      894
@@ -377,7 +377,7 @@ APBPrescTable            0x800'1c0c    0x8  Data  Gb  system_stm32f4xx.o [3]
 BusFault_Handler         0x800'1b7f    0x2  Code  Gb  stm32f4xx_it.o [2]
 CSTACK$$Base            0x2000'0078          --   Gb  - Linker created -
 CSTACK$$Limit           0x2000'0478          --   Gb  - Linker created -
-CtrlPinsRequest          0x800'11a9   0x1a  Code  Gb  lcd1602_i2c.o [5]
+CtrlPinsRetrieve         0x800'11a9   0x1a  Code  Gb  lcd1602_i2c.o [5]
 Data_Write               0x800'1227   0x64  Code  Gb  lcd1602_i2c.o [5]
 DebugMon_Handler         0x800'1b85    0x2  Code  Gb  stm32f4xx_it.o [2]
 E_Pin                    0x800'1179   0x30  Code  Gb  lcd1602_i2c.o [5]
@@ -469,11 +469,11 @@ uwTickFreq              0x2000'0008    0x1  Data  Gb  stm32f4xx_hal.o [4]
 uwTickPrio              0x2000'0000    0x4  Data  Gb  stm32f4xx_hal.o [4]
 
 
-[1] = e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\EWARM
-[2] = e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core
-[3] = e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\CMSIS
-[4] = e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver
-[5] = e:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\LCD1602
+[1] = E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\EWARM
+[2] = E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Application\User\Core
+[3] = E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\CMSIS
+[4] = E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\Drivers\STM32F4xx_HAL_Driver
+[5] = E:\IAR projects\STM32F4xx\LCD1602_I2C\EWARM\LCD1602_I2C\Obj\LCD1602
 [6] = dl7M_tln.a
 [7] = m7M_tls.a
 [8] = rt7M_tl.a

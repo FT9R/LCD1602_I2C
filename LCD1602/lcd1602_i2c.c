@@ -4,7 +4,7 @@
 void RS_Pin(lcd1602_HandleTypeDef *lcd1602_Handle, FlagStatus status);
 void RW_Pin(lcd1602_HandleTypeDef *lcd1602_Handle, FlagStatus status);
 void E_Pin(lcd1602_HandleTypeDef *lcd1602_Handle, FlagStatus status);
-uint8_t CtrlPinsRequest(lcd1602_HandleTypeDef *lcd1602_Handle);
+uint8_t CtrlPinsRetrieve(lcd1602_HandleTypeDef *lcd1602_Handle);
 void Instruction_Write(lcd1602_HandleTypeDef *lcd1602_Handle, const uint8_t *instruction);
 void Data_Write(lcd1602_HandleTypeDef *lcd1602_Handle, const uint8_t *data);
 
@@ -16,13 +16,13 @@ void lcd1602_Init(lcd1602_HandleTypeDef *lcd1602_Handle, I2C_HandleTypeDef *hi2c
 	lcd1602_Handle->address = address;
 	lcd1602_Handle->instruction = NULL;
 	lcd1602_Handle->data = NULL;
-	lcd1602_Handle->RS_Pin = SET;
-	lcd1602_Handle->RW_Pin = SET;
-	lcd1602_Handle->E_Pin = SET;
-	lcd1602_Handle->LED = ENABLE;
-	lcd1602_Handle->displayState = DISABLE;
-	lcd1602_Handle->cursorState = DISABLE;
-	lcd1602_Handle->blinkState = DISABLE;
+	lcd1602_Handle->ctrlPins.RS_Pin = SET;
+	lcd1602_Handle->ctrlPins.RW_Pin = SET;
+	lcd1602_Handle->ctrlPins.E_Pin = SET;
+	lcd1602_Handle->ctrlPins.LED = ENABLE;
+	lcd1602_Handle->dispBits.displayState = DISABLE;
+	lcd1602_Handle->dispBits.cursorState = DISABLE;
+	lcd1602_Handle->dispBits.blinkState = DISABLE;
 	/* At power on, all the ports are HIGH [PCF8574 datasheet] */
 	RS_Pin(lcd1602_Handle, RESET);
 	RW_Pin(lcd1602_Handle, RESET);
@@ -101,12 +101,12 @@ void lcd1602_Home(lcd1602_HandleTypeDef *lcd1602_Handle)
 void lcd1602_Display(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state)
 {
 	lcd1602_Handle->instruction = 0b00001000;
-	lcd1602_Handle->displayState = state;
-	if (lcd1602_Handle->displayState == ENABLE)
+	lcd1602_Handle->dispBits.displayState = state;
+	if (lcd1602_Handle->dispBits.displayState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 2);
-	if (lcd1602_Handle->cursorState == ENABLE)
+	if (lcd1602_Handle->dispBits.cursorState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 1);
-	if (lcd1602_Handle->blinkState == ENABLE)
+	if (lcd1602_Handle->dispBits.blinkState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 0);
 	Instruction_Write(lcd1602_Handle, &lcd1602_Handle->instruction);
 	lcd1602_Handle->instruction = lcd1602_Handle->instruction << 4;
@@ -116,12 +116,12 @@ void lcd1602_Display(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState stat
 void lcd1602_Cursor(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state)
 {
 	lcd1602_Handle->instruction = 0b00001000;
-	lcd1602_Handle->cursorState = state;
-	if (lcd1602_Handle->displayState == ENABLE)
+	lcd1602_Handle->dispBits.cursorState = state;
+	if (lcd1602_Handle->dispBits.displayState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 2);
-	if (lcd1602_Handle->cursorState == ENABLE)
+	if (lcd1602_Handle->dispBits.cursorState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 1);
-	if (lcd1602_Handle->blinkState == ENABLE)
+	if (lcd1602_Handle->dispBits.blinkState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 0);
 	Instruction_Write(lcd1602_Handle, &lcd1602_Handle->instruction);
 	lcd1602_Handle->instruction = lcd1602_Handle->instruction << 4;
@@ -131,12 +131,12 @@ void lcd1602_Cursor(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state
 void lcd1602_Blink(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state)
 {
 	lcd1602_Handle->instruction = 0b00001000;
-	lcd1602_Handle->blinkState = state;
-	if (lcd1602_Handle->displayState == ENABLE)
+	lcd1602_Handle->dispBits.blinkState = state;
+	if (lcd1602_Handle->dispBits.displayState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 2);
-	if (lcd1602_Handle->cursorState == ENABLE)
+	if (lcd1602_Handle->dispBits.cursorState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 1);
-	if (lcd1602_Handle->blinkState == ENABLE)
+	if (lcd1602_Handle->dispBits.blinkState == ENABLE)
 		SET_BIT(lcd1602_Handle->instruction, 1 << 0);
 	Instruction_Write(lcd1602_Handle, &lcd1602_Handle->instruction);
 	lcd1602_Handle->instruction = lcd1602_Handle->instruction << 4;
@@ -145,9 +145,9 @@ void lcd1602_Blink(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state)
 
 void lcd1602_LED(lcd1602_HandleTypeDef *lcd1602_Handle, FunctionalState state)
 {
-	lcd1602_Handle->LED = state;
-	uint8_t ctrlPins = CtrlPinsRequest(lcd1602_Handle);
-	HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, 1, 1000);
+	lcd1602_Handle->ctrlPins.LED = state;
+	uint8_t ctrlPins = CtrlPinsRetrieve(lcd1602_Handle);
+	HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, sizeof(ctrlPins), I2C_TIMEOUT);
 }
 
 void lcd1602_DisplayShift(lcd1602_HandleTypeDef *lcd1602_Handle, ShiftDirection direction)
@@ -175,37 +175,37 @@ void lcd1602_CursorShift(lcd1602_HandleTypeDef *lcd1602_Handle, ShiftDirection d
  */
 void RS_Pin(lcd1602_HandleTypeDef *lcd1602_Handle, FlagStatus status)
 {
-	if (lcd1602_Handle->RS_Pin != status)
+	if (lcd1602_Handle->ctrlPins.RS_Pin != status)
 	{
-		lcd1602_Handle->RS_Pin = status;
-		uint8_t ctrlPins = CtrlPinsRequest(lcd1602_Handle);
-		HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, 1, 1000);
+		lcd1602_Handle->ctrlPins.RS_Pin = status;
+		uint8_t ctrlPins = CtrlPinsRetrieve(lcd1602_Handle);
+		HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, sizeof(ctrlPins), I2C_TIMEOUT);
 	}
 }
 
 void RW_Pin(lcd1602_HandleTypeDef *lcd1602_Handle, FlagStatus status)
 {
-	if (lcd1602_Handle->RW_Pin != status)
+	if (lcd1602_Handle->ctrlPins.RW_Pin != status)
 	{
-		lcd1602_Handle->RW_Pin = status;
-		uint8_t ctrlPins = CtrlPinsRequest(lcd1602_Handle);
-		HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, 1, 1000);
+		lcd1602_Handle->ctrlPins.RW_Pin = status;
+		uint8_t ctrlPins = CtrlPinsRetrieve(lcd1602_Handle);
+		HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, sizeof(ctrlPins), I2C_TIMEOUT);
 	}
 }
 
 void E_Pin(lcd1602_HandleTypeDef *lcd1602_Handle, FlagStatus status)
 {
-	if (lcd1602_Handle->E_Pin != status)
+	if (lcd1602_Handle->ctrlPins.E_Pin != status)
 	{
-		lcd1602_Handle->E_Pin = status;
-		uint8_t ctrlPins = CtrlPinsRequest(lcd1602_Handle);
-		HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, 1, 1000);
+		lcd1602_Handle->ctrlPins.E_Pin = status;
+		uint8_t ctrlPins = CtrlPinsRetrieve(lcd1602_Handle);
+		HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPins, sizeof(ctrlPins), I2C_TIMEOUT);
 	}
 }
 
-uint8_t CtrlPinsRequest(lcd1602_HandleTypeDef *lcd1602_Handle)
+uint8_t CtrlPinsRetrieve(lcd1602_HandleTypeDef *lcd1602_Handle)
 {
-	return (uint8_t)(lcd1602_Handle->RS_Pin << 0 | lcd1602_Handle->RW_Pin << 1 | lcd1602_Handle->E_Pin << 2 | lcd1602_Handle->LED << 3);
+	return (uint8_t)(lcd1602_Handle->ctrlPins.RS_Pin << 0 | lcd1602_Handle->ctrlPins.RW_Pin << 1 | lcd1602_Handle->ctrlPins.E_Pin << 2 | lcd1602_Handle->ctrlPins.LED << 3);
 }
 
 void Instruction_Write(lcd1602_HandleTypeDef *lcd1602_Handle, const uint8_t *instruction)
@@ -214,9 +214,9 @@ void Instruction_Write(lcd1602_HandleTypeDef *lcd1602_Handle, const uint8_t *ins
 	RS_Pin(lcd1602_Handle, RESET);
 	RW_Pin(lcd1602_Handle, RESET);
 	E_Pin(lcd1602_Handle, SET);
-	MODIFY_REG(ctrlPinsAndInstruction, 0xF, CtrlPinsRequest(lcd1602_Handle));
+	MODIFY_REG(ctrlPinsAndInstruction, 0xF, CtrlPinsRetrieve(lcd1602_Handle));
 	MODIFY_REG(ctrlPinsAndInstruction, 0xF0, (*instruction) & 0xF0);
-	HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPinsAndInstruction, 1, 1000);
+	HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPinsAndInstruction, sizeof(ctrlPinsAndInstruction), I2C_TIMEOUT);
 	E_Pin(lcd1602_Handle, RESET);
 }
 
@@ -226,8 +226,8 @@ void Data_Write(lcd1602_HandleTypeDef *lcd1602_Handle, const uint8_t *data)
 	RS_Pin(lcd1602_Handle, SET);
 	RW_Pin(lcd1602_Handle, RESET);
 	E_Pin(lcd1602_Handle, SET);
-	MODIFY_REG(ctrlPinsAndData, 0xF, CtrlPinsRequest(lcd1602_Handle));
+	MODIFY_REG(ctrlPinsAndData, 0xF, CtrlPinsRetrieve(lcd1602_Handle));
 	MODIFY_REG(ctrlPinsAndData, 0xF0, (*data) & 0xF0);
-	HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPinsAndData, 1, 1000);
+	HAL_I2C_Master_Transmit(lcd1602_Handle->hi2c, lcd1602_Handle->address, &ctrlPinsAndData, sizeof(ctrlPinsAndData), I2C_TIMEOUT);
 	E_Pin(lcd1602_Handle, RESET);
 }

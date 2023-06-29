@@ -22,10 +22,10 @@
     <StLinkDriver>
         <stlinkserialNo>%</stlinkserialNo>
         <stlinkfoundProbes />
-        <stlinkResetStyle>0</stlinkResetStyle>
-        <stlinkResetStrategy>2</stlinkResetStrategy>
         <LeaveTargetRunning>_ 0</LeaveTargetRunning>
         <CStepIntDis>_ 0</CStepIntDis>
+        <stlinkResetStyle>0</stlinkResetStyle>
+        <stlinkResetStrategy>2</stlinkResetStrategy>
     </StLinkDriver>
     <Trace1>
         <Enabled>0</Enabled>
@@ -54,7 +54,7 @@
         <ITMlogFile>$PROJ_DIR$\ITM.log</ITMlogFile>
     </SWOTraceHWSettings>
     <DebugChecksum>
-        <Checksum>468553459</Checksum>
+        <Checksum>2431821547</Checksum>
     </DebugChecksum>
     <Disassembly>
         <MixedMode>1</MixedMode>
