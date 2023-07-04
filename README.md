@@ -26,4 +26,4 @@ while (1)
  ...
 }
 ```
-4) That's all. Ready to use. For application use refer to [`main.c`](./Core/Src/main.c).
+4) That's all. For application use refer to [`main.c`](./Core/Src/main.c).
